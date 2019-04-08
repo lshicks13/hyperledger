@@ -1,18 +1,20 @@
 var conditionalSum = function(values, condition) {
-    // Your code here
-    eNum = 0;
-    oNum = 0;
+    // My code
+    var num = 0;
     for (var i = 0; i < values.length; i++) {
-        if(condition === "even" && values[i] % 2 === 0){
-            
-           eNum += values[i];
-            console.log(eNum);
-        }else if (condition === "odd" && values[i] % 2 === !0){
-            return oNum += values[i];
+        if(condition === "even"){
+            if((values[i]) % 2 === 0){
+                num += values[i]
+            }            
+        }else if (condition === "odd"){
+            if((values[i]) % 2 !== 0){
+                num += values[i]
+            }
         }else {
             return 0;
         }
     }
+    return num
 };
   
 console.log(conditionalSum([1, 2, 3, 4, 5], "even"));
