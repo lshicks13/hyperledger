@@ -61,7 +61,32 @@ console.log(conditionalSum([], "odd"));
 
 //Task 3: Talking Calendar
 var talkingCalendar = function(date) {
-    // Your code here
+    // My code
+    var y = date.slice(0,4);
+    var m = Number(date.slice(5,7)) - 1;
+    var d = date.slice(8,10);
+    var dt = new Date(y,m,d);
+    var opt = { month: 'long'};
+    var mth = new Intl.DateTimeFormat('en-US', opt).format(dt);
+    if (dt.getDate() % 10 == 1 && dt.getDate() != 11) {
+        d += 'st';
+        if(dt.getDate() < 4){
+            d = d[1] + 'st'
+        }
+    } else if(dt.getDate() % 10 == 2 && dt.getDate() != 12) {
+        d += 'nd'
+        if(dt.getDate() < 4){
+            d = d[1] + 'nd'
+        }
+    } else if(dt.getDate() % 10 == 3 && dt.getDate() != 13) {
+        d += 'rd'
+        if(dt.getDate() < 4){
+            d = d[1] + 'rd'
+        }
+    } else {
+        d += 'th'
+    }
+    return mth + " " + d + ", " + y;
 };
   
 console.log(talkingCalendar("2017/12/02"));
