@@ -60,3 +60,10 @@ console.log(conditionalSum([13, 88, 12, 44, 99], "even"));
 console.log(conditionalSum([], "odd"));
 
 //Task 3: Talking Calendar
+var talkingCalendar = function(date) {
+    // Your code here
+};
+  
+console.log(talkingCalendar("2017/12/02"));
+console.log(talkingCalendar("2007/11/11"));
+console.log(talkingCalendar("1987/08/24"));
